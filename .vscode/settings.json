@@ -1,0 +1,7 @@
+{
+    "markdown.marp.themes": [
+        "./jrw_theme.css"
+    ],
+    // 必要なら HTML を有効化（埋め込み図など）
+    "markdown.marp.html": "default",
+}

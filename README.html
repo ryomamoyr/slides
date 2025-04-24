@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Marpによるスライド作成ガイド</title>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #1d1d1f;
+      --accent-color: #0071e3;
+      --light-gray: #f5f5f7;
+      --mid-gray: #86868b;
+      --divider: #d2d2d7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.47059;
+      font-weight: 400;
+      letter-spacing: -0.022em;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 100px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 600;
+      letter-spacing: -0.003em;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      color: var(--mid-gray);
+      font-weight: 400;
+      margin-bottom: 40px;
+    }
+
+    section {
+      margin-bottom: 80px;
+    }
+
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: -0.003em;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.47059;
+      margin-bottom: 20px;
+      color: var(--text-color);
+    }
+
+    .overview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .overview-item {
+      background-color: var(--light-gray);
+      border-radius: 18px;
+      padding: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .overview-item:hover {
+      transform: scale(1.02);
+    }
+
+    .overview-title {
+      font-size: 21px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .overview-text {
+      font-size: 17px;
+      color: var(--mid-gray);
+      line-height: 1.4;
+    }
+
+    .structure {
+      margin: 40px 0;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .structure-header {
+      background-color: var(--light-gray);
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--divider);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--mid-gray);
+      display: flex;
+      align-items: center;
+    }
+
+    .structure-header::before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background-color: #ff605c;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+
+    .structure-header::after {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background-color: #ffbd44;
+      border-radius: 50%;
+      margin-left: 8px;
+    }
+
+    .structure-content {
+      padding: 24px;
+      background-color: #fafafa;
+      font-family: "SF Mono", monospace;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #333;
+      overflow-x: auto;
+      white-space: pre;
+    }
+
+    .folder-main {
+      color: var(--accent-color);
+      font-weight: 500;
+    }
+
+    .folder-sub {
+      color: #9f41f3;
+      font-weight: 500;
+    }
+
+    .file {
+      color: #22a669;
+    }
+
+    .comment {
+      color: var(--mid-gray);
+      font-style: italic;
+    }
+
+    .note {
+      background-color: var(--light-gray);
+      border-radius: 18px;
+      padding: 30px;
+      margin: 30px 0;
+      position: relative;
+    }
+
+    .note::before {
+      content: "";
+      display: block;
+      width: 4px;
+      height: 50px;
+      background-color: var(--accent-color);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .features {
+      display: flex;
+      margin: 40px 0;
+      gap: 20px;
+    }
+
+    .feature {
+      flex: 1;
+      text-align: center;
+      padding: 30px 20px;
+      background-color: white;
+      border-radius: 18px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: var(--accent-color);
+    }
+
+    .feature-title {
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .feature-text {
+      font-size: 14px;
+      color: var(--mid-gray);
+      line-height: 1.4;
+    }
+
+    .cta {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: white;
+      font-size: 17px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 980px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #0077ed;
+      transform: scale(1.02);
+    }
+
+    .footer {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid var(--divider);
+      font-size: 12px;
+      color: var(--mid-gray);
+    }
+
+    code {
+      font-family: "SF Mono", monospace;
+      background-color: var(--light-gray);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 15px;
+      color: var(--accent-color);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 60px 20px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .features {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Marpによるスライド作成</h1>
+    </header>
+
+    <section>
+      <h2>概要</h2>
+
+      <div class="overview">
+        <div class="overview-item">
+          <div class="overview-title">環境</div>
+          <div class="overview-text">VScode + Marpによるマークダウンベースのスライド作成</div>
+        </div>
+
+        <div class="overview-item">
+          <div class="overview-title">テンプレート</div>
+          <div class="overview-text"><code>template_project/template_event/template.md</code>をコピーして使用</div>
+        </div>
+
+        <div class="overview-item">
+          <div class="overview-title">管理方法</div>
+          <div class="overview-text">プロジェクト毎・報告会毎に整理されたフォルダ構造</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>フォルダ構造</h2>
+
+      <div class="structure">
+        <div class="structure-header">ディレクトリ構成イメージ</div>
+        <div class="structure-content"><span class="folder-main">project_name/</span>
+          ├── <span class="folder-sub">yyyyMMdd_eventA/</span>
+          │ ├── <span class="file">images/</span> <span class="comment">// スライド用画像</span>
+          │ └── <span class="file">yyyyMMdd_報告資料.md</span>
+          └── <span class="folder-sub">yyyyMMdd_eventB/</span>
+          ├── <span class="file">images/</span> <span class="comment">// スライド用画像</span>
+          └── <span class="file">yyyyMMdd_報告資料.md</span></div>
+      </div>
+
+      <div class="note">
+        <p>各プロジェクトディレクトリには報告会などのイベントディレクトリが含まれ、その中にスライド（.mdファイル）とスライドに使う画像を保存するディレクトリが配置されています。</p>
+      </div>
+
+      <div class="structure">
+        <div class="structure-header">実例</div>
+        <div class="structure-content"><span class="folder-main">A社/</span>
+          └── <span class="folder-sub">yyyyMMdd_中間報告会/</span>
+          ├── <span class="file">images/</span>
+          └── <span class="file">報告資料.md</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>スライドデザイン</h2>
+
+      <p><code>theme.css</code>ファイルで細かい設定を変更できます。以下の3つが定義されています</p>
+
+
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">1</div>
+          <div class="feature-title">タイトルスライド</div>
+          <div class="feature-text">プレゼンテーションの表紙として使用するデザイン</div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">2</div>
+          <div class="feature-title">目次スライド</div>
+          <div class="feature-text">プレゼンテーションの構成を示すレイアウト</div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">3</div>
+          <div class="feature-title">章区切りスライド</div>
+          <div class="feature-text">セクションの変わり目を視覚的に表示するデザイン</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      © Marpスライド作成ガイド
+    </div>
+  </div>
+</body>
+
+</html>

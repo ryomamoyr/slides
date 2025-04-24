@@ -1,0 +1,196 @@
+/* @theme jrw-template */
+@import "default";
+
+/*--------------------------------------
+  カスタムプロパティ
+--------------------------------------*/
+:root {
+  --color-primary: #191970;
+  --color-secondary: #000000;
+  --color-text: #212745;
+  --color-bg: #FFFFFF;
+  --confidential-color: #FF7F00;
+  --font-sans: "Yu Gothic", "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
+  --bg-image: url("../../master_images/background.png");
+  --logo-da: url("../../master_images/JRW_DA_logo.png");
+  --logo-jrw: url("../../master_images/JRW_logo.png");
+}
+
+html {
+  font-size: 16px;
+}
+
+/*--------------------------------------
+  全セクション共通スタイル
+--------------------------------------*/
+section {
+  position: relative;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-bg);
+  padding: 3rem 5%;
+}
+
+/* 見出し共通 */
+section h1,
+section h2,
+section h3 {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* レイアウト別見出し */
+section h1 {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+}
+
+section h2 {
+  font-size: 1rem;
+  color: var(--color-secondary);
+}
+
+section h3 {
+  font-size: 0.8rem;
+  color: var(--color-text);
+}
+
+/* 本文・リスト */
+section:not(.title):not(.agenda):not(.divider) p,
+section:not(.title):not(.agenda):not(.divider) ul,
+section:not(.title):not(.agenda):not(.divider) ol {
+  font-size: 0.8rem;
+  line-height: 1.2;
+  margin: 0 0 0.3rem;
+}
+
+/*--------------------------------------
+  ヘッダー (Confidential)
+--------------------------------------*/
+header {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 0.4rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--confidential-color);
+  text-align: right;
+}
+
+/*--------------------------------------
+  タイトルと目次 共通背景
+--------------------------------------*/
+section:is(.title, .agenda) {
+  background: var(--bg-image) center/cover no-repeat;
+  color: #fff;
+  text-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4);
+}
+
+/*--------------------------------------
+  タイトルスライド
+--------------------------------------*/
+section.title {
+  overflow: hidden;
+}
+
+/* 左上 DAロゴ */
+section.title::before {
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 10rem;
+  height: 5rem;
+  background: var(--logo-da) center/contain no-repeat;
+  pointer-events: none;
+}
+
+/* 右上 JRWロゴ */
+section.title header::after {
+  content: "";
+  display: inline-block;
+  width: 3.5rem;
+  height: 3.5rem;
+  background: var(--logo-jrw) center/contain no-repeat;
+  vertical-align: top;
+  margin-left: 0.5rem;
+}
+
+/* タイトル */
+section.title h1 {
+  top: 65%;
+  left: 5%;
+  font-size: 1.8rem;
+  color: #fff !important;
+}
+
+/* サブタイトル（日付など） */
+section.title h2 {
+  position: absolute !important;
+  top: 77%;
+  left: 5%;
+  font-size: 1.2rem;
+  color: #fff !important;
+  text-align: left;
+}
+
+/*--------------------------------------
+  目次スライド
+--------------------------------------*/
+section.agenda h1 {
+  position: absolute;
+  top: 15%;
+  left: 7%;
+  font-size: 1.5rem;
+  color: #fff !important;
+}
+
+section.agenda ol li {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff !important;
+  padding: 0;
+}
+
+/*--------------------------------------
+  章区切りのスライド
+--------------------------------------*/
+section.divider {
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+section.divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23%;
+  height: 100%;
+  background: var(--bg-image) center/cover;
+  filter: grayscale(100%) brightness(55%);
+}
+
+section.divider h1 {
+  top: 77%;
+  left: 6%;
+  width: 23%;
+  transform: translateY(-50%);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 9rem;
+  line-height: 1;
+  color: #fff !important;
+}
+
+section.divider h2 {
+  position: absolute !important;
+  top: 70%;
+  left: 25%;
+  font-size: 1.8rem;
+  color: var(--color-primary) !important;
+}

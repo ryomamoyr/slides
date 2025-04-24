@@ -1,0 +1,9 @@
+[project]
+name = "marp-slide"
+version = "0.1.0"
+description = "Convert pptx to Marp markdown slides"
+authors = ["Your Name <your.email@example.com>"]
+requires-python = ">=3.8"
+dependencies = [
+    "python-pptx>=1.0.2",
+]
