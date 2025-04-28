@@ -218,8 +218,8 @@ section.divider h2 {
 section img[alt^="c"] {
   display: block;
   margin: 0.2rem auto;
-  max-width: 70%;
-  max-height: 60%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /* 左右に並べて表示する場合のコンテナ */
@@ -263,4 +263,28 @@ section .split-layout h3 {
 section .split-layout ul,
 section .split-layout ol {
   padding-left: 1.5rem;
+}
+
+/*--------------------------------------
+  テーブル枠線とヘッダーのスタイル
+--------------------------------------*/
+section table {
+  width: 100% !important;
+  border-collapse: collapse;
+}
+
+/* ヘッダー行：黒背景・白文字・黒枠 */
+section table th {
+  background-color: #322e2e !important;
+  color: #fff !important;
+  border: 1px solid #000;
+  padding: 0.2rem 1rem;
+  text-align: center;
+}
+
+/* ボディセル：黒枠 */
+section table td {
+  border: 1px solid #000;
+  padding: 0.2rem 1rem;
+  text-align: center;
 }
