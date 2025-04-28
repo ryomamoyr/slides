@@ -58,6 +58,8 @@ section h3 {
   color: var(--color-text);
 }
 
+
+
 /* 本文・リスト */
 section:not(.title):not(.agenda):not(.divider) p,
 section:not(.title):not(.agenda):not(.divider) ul,
@@ -65,6 +67,21 @@ section:not(.title):not(.agenda):not(.divider) ol {
   font-size: 0.8rem;
   line-height: 1.2;
   margin: 0 0 0.3rem;
+  padding: 0.2rem 0;
+}
+
+
+section::after {
+  /* content: attr(data-marpit-pagination) !important; */
+  content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total) !important;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 1.7rem;
+  /* 上からの距離 */
+  right: 1rem;
+  /* 右からの距離 */
+  color: #000;
+  /* 色の設定 */
 }
 
 /*--------------------------------------
@@ -73,9 +90,9 @@ section:not(.title):not(.agenda):not(.divider) ol {
 header {
   position: absolute;
   top: 0.5rem;
-  right: 1rem;
+  right: 0.5rem;
   font-size: 0.4rem;
-  font-weight: 500;
+  font-weight: 1000;
   line-height: 1.2;
   color: var(--confidential-color);
   text-align: right;
@@ -182,7 +199,7 @@ section.divider h1 {
   width: 23%;
   transform: translateY(-50%);
   font-family: "Times New Roman", Times, serif;
-  font-size: 9rem;
+  font-size: 8rem;
   line-height: 1;
   color: #fff !important;
 }
@@ -191,6 +208,59 @@ section.divider h2 {
   position: absolute !important;
   top: 70%;
   left: 25%;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: var(--color-primary) !important;
+}
+
+/*--------------------------------------
+  画像レイアウトクラス - 完璧版
+--------------------------------------*/
+section img[alt^="c"] {
+  display: block;
+  margin: 0.2rem auto;
+  max-width: 70%;
+  max-height: 60%;
+}
+
+/* 左右に並べて表示する場合のコンテナ */
+section p:has(img[alt="c"] + img[alt="c"]) {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0.5rem 0 1rem 0;
+}
+
+
+
+/*--------------------------------------
+  左右分割レイアウト
+--------------------------------------*/
+/* 左右分割コンテナ */
+section .split-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* 左側コンテンツ */
+section .left-content {
+  width: 48%;
+}
+
+/* 右側コンテンツ */
+section .right-content {
+  width: 48%;
+}
+
+/* 分割コンテンツ内の見出しとリスト調整 */
+section .split-layout h2,
+section .split-layout h3 {
+  margin-top: 0;
+}
+
+section .split-layout ul,
+section .split-layout ol {
+  padding-left: 1.5rem;
 }
