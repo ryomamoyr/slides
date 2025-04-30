@@ -28,7 +28,7 @@ section {
   font-family: var(--font-sans);
   color: var(--color-text);
   background: var(--color-bg);
-  padding: 3rem 5%;
+  /* padding: 2rem 5%; */
 }
 
 /* 見出し共通 */
@@ -67,7 +67,6 @@ section:not(.title):not(.agenda):not(.divider) ol {
   font-size: 0.8rem;
   line-height: 1.2;
   margin: 0 0 0.3rem;
-  padding: 0.2rem 0;
 }
 
 
@@ -269,8 +268,33 @@ section .split-layout ol {
   テーブル枠線とヘッダーのスタイル
 --------------------------------------*/
 section table {
-  width: 100% !important;
-  border-collapse: collapse;
+  /* 幅は中身に合わせる */
+  width: auto !important;
+  /* スライド外に出ないよう最大幅だけ確保 */
+  max-width: 100% !important;
+  /* ブロックレベル（またはテーブルレベル）にして中央マージンを効かせる */
+  display: table !important;
+  margin: 0.3rem auto !important;
+  table-layout: auto;
+  background-color: #fff !important;
+  color: #000 !important;
+  border: 1px solid #000;
+  /* border-radius: 0.5rem; */
+  /* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); */
+  overflow: hidden;
+  text-align: center;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+/* 奇数行の色 */
+section table tr:nth-child(odd) td {
+  background-color: #f2f2f2 !important;
+}
+
+/* 偶数行 */
+section table tr:nth-child(even) td {
+  background-color: #ffffff !important;
 }
 
 /* ヘッダー行：黒背景・白文字・黒枠 */
@@ -280,6 +304,7 @@ section table th {
   border: 1px solid #000;
   padding: 0.2rem 1rem;
   text-align: center;
+  font-size: 0.8rem !important;
 }
 
 /* ボディセル：黒枠 */
@@ -287,4 +312,6 @@ section table td {
   border: 1px solid #000;
   padding: 0.2rem 1rem;
   text-align: center;
+  font-size: 0.8rem !important;
+  word-wrap: break-word;
 }
