@@ -1,9 +1,14 @@
 {
-    // "workbench.preferredDarkColorTheme": "Solarized Dark",
-    "workbench.preferredDarkColorTheme": "Cursor Dark Midnight",
-    "markdown.marp.themes": [
-        "./jrw_theme.css"
-    ],
-    // 必要なら HTML を有効化（埋め込み図など）
-    "markdown.marp.html": "all",
+  "workbench.preferredDarkColorTheme": "Solarized Light",
+  "markdown.marp.themes": ["./jrw_theme.css"],
+  "markdown.marp.html": "all",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "eslint.validate": ["javascript", "html", "typescript", "markdown"],
+  "editor.detectIndentation": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4
 }

@@ -8,8 +8,8 @@
   --color-primary: #191970;
   --color-secondary: #000000;
   --color-text: #212745;
-  --color-bg: #FFFFFF;
-  --confidential-color: #FF7F00;
+  --color-bg: #ffffff;
+  --confidential-color: #ff7f00;
   --font-sans: "Yu Gothic", "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
   --bg-image: url("../../master_images/background.png");
   --logo-da: url("../../master_images/JRW_DA_logo.png");
@@ -58,8 +58,6 @@ section h3 {
   color: var(--color-text);
 }
 
-
-
 /* 本文・リスト */
 section:not(.title):not(.agenda):not(.divider) p,
 section:not(.title):not(.agenda):not(.divider) ul,
@@ -69,10 +67,9 @@ section:not(.title):not(.agenda):not(.divider) ol {
   margin: 0 0 0.3rem;
 }
 
-
 section::after {
   /* content: attr(data-marpit-pagination) !important; */
-  content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total) !important;
+  content: attr(data-marpit-pagination) "/" attr(data-marpit-pagination-total) !important;
   font-size: 1.2rem;
   position: absolute;
   top: 1.7rem;
@@ -229,8 +226,6 @@ section p:has(img[alt="c"] + img[alt="c"]) {
   margin: 0.5rem 0 1rem 0;
 }
 
-
-
 /*--------------------------------------
   左右分割レイアウト
 --------------------------------------*/
@@ -304,7 +299,7 @@ section table th {
   border: 1px solid #000;
   padding: 0.2rem 1rem;
   text-align: center;
-  font-size: 0.8rem !important;
+  font-size: 0.8rem;
 }
 
 /* ボディセル：黒枠 */
@@ -312,6 +307,6 @@ section table td {
   border: 1px solid #000;
   padding: 0.2rem 1rem;
   text-align: center;
-  font-size: 0.8rem !important;
+  font-size: 0.8rem;
   word-wrap: break-word;
 }
