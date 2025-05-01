@@ -28,7 +28,7 @@ section {
   font-family: var(--font-sans);
   color: var(--color-text);
   background: var(--color-bg);
-  /* padding: 2rem 5%; */
+  padding: 32px 5%;
 }
 
 /* 見出し共通 */
@@ -41,20 +41,20 @@ section h3 {
 
 /* レイアウト別見出し */
 section h1 {
-  font-size: 1.2rem;
+  font-size: 32px;
   color: var(--color-primary);
   position: absolute;
-  top: 1rem;
-  left: 1.5rem;
+  top: 16px;
+  left: 24px;
 }
 
 section h2 {
-  font-size: 1rem;
+  font-size: 28px;
   color: var(--color-secondary);
 }
 
 section h3 {
-  font-size: 0.8rem;
+  font-size: 24px;
   color: var(--color-text);
 }
 
@@ -62,22 +62,18 @@ section h3 {
 section:not(.title):not(.agenda):not(.divider) p,
 section:not(.title):not(.agenda):not(.divider) ul,
 section:not(.title):not(.agenda):not(.divider) ol {
-  font-size: 0.8rem;
-  line-height: 1.2;
-  margin: 0 0 0.3rem;
+  font-size: 24px;
+  /* line-height: 1.2; */
+  margin: 2px 2px 2px;
 }
 
 section::after {
-  /* content: attr(data-marpit-pagination) !important; */
   content: attr(data-marpit-pagination) "/" attr(data-marpit-pagination-total) !important;
-  font-size: 1.2rem;
+  font-size: 22px;
   position: absolute;
-  top: 1.7rem;
-  /* 上からの距離 */
-  right: 1rem;
-  /* 右からの距離 */
+  top: 28px;
+  right: 16px;
   color: #000;
-  /* 色の設定 */
 }
 
 /*--------------------------------------
@@ -85,10 +81,10 @@ section::after {
 --------------------------------------*/
 header {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  font-size: 0.4rem;
-  font-weight: 1000;
+  top: 8px;
+  right: 8px;
+  font-size: 12px;
+  font-weight: 800;
   line-height: 1.2;
   color: var(--confidential-color);
   text-align: right;
@@ -100,7 +96,7 @@ header {
 section:is(.title, .agenda) {
   background: var(--bg-image) center/cover no-repeat;
   color: #fff;
-  text-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 /*--------------------------------------
@@ -116,8 +112,8 @@ section.title::before {
   position: absolute;
   top: 5%;
   left: 5%;
-  width: 10rem;
-  height: 5rem;
+  width: 240px;
+  height: 100px;
   background: var(--logo-da) center/contain no-repeat;
   pointer-events: none;
 }
@@ -126,18 +122,18 @@ section.title::before {
 section.title header::after {
   content: "";
   display: inline-block;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 100px;
+  height: 100px;
   background: var(--logo-jrw) center/contain no-repeat;
   vertical-align: top;
-  margin-left: 0.5rem;
+  margin-left: 120px;
 }
 
 /* タイトル */
 section.title h1 {
   top: 65%;
   left: 5%;
-  font-size: 1.8rem;
+  font-size: 40px;
   color: #fff !important;
 }
 
@@ -146,7 +142,7 @@ section.title h2 {
   position: absolute !important;
   top: 77%;
   left: 5%;
-  font-size: 1.2rem;
+  font-size: 24px;
   color: #fff !important;
   text-align: left;
 }
@@ -157,14 +153,14 @@ section.title h2 {
 section.agenda h1 {
   position: absolute;
   top: 15%;
-  left: 7%;
-  font-size: 1.5rem;
+  left: 5%;
+  font-size: 36px;
   color: #fff !important;
 }
 
 section.agenda ol li {
-  margin: 1rem 0;
-  font-size: 1.2rem;
+  margin: 40px 0;
+  font-size: 36px;
   font-weight: 500;
   color: #fff !important;
   padding: 0;
@@ -195,16 +191,16 @@ section.divider h1 {
   width: 23%;
   transform: translateY(-50%);
   font-family: "Times New Roman", Times, serif;
-  font-size: 8rem;
+  font-size: 256px;
   line-height: 1;
   color: #fff !important;
 }
 
 section.divider h2 {
   position: absolute !important;
-  top: 70%;
+  top: 75%;
   left: 25%;
-  font-size: 1.6rem;
+  font-size: 36px;
   color: var(--color-primary) !important;
 }
 
@@ -213,7 +209,7 @@ section.divider h2 {
 --------------------------------------*/
 section img[alt^="c"] {
   display: block;
-  margin: 0.2rem auto;
+  margin: 3.2px auto;
   max-width: 100%;
   max-height: 100%;
 }
@@ -223,7 +219,7 @@ section p:has(img[alt="c"] + img[alt="c"]) {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin: 0.5rem 0 1rem 0;
+  margin: 8px 0 16px 0;
 }
 
 /*--------------------------------------
@@ -234,7 +230,7 @@ section .split-layout {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 1rem;
+  margin-top: 32px;
   width: 100%;
 }
 
@@ -256,7 +252,7 @@ section .split-layout h3 {
 
 section .split-layout ul,
 section .split-layout ol {
-  padding-left: 1.5rem;
+  padding-left: 24px;
 }
 
 /*--------------------------------------
@@ -269,13 +265,13 @@ section table {
   max-width: 100% !important;
   /* ブロックレベル（またはテーブルレベル）にして中央マージンを効かせる */
   display: table !important;
-  margin: 0.3rem auto !important;
+  margin: 16px auto !important;
   table-layout: auto;
   background-color: #fff !important;
   color: #000 !important;
   border: 1px solid #000;
-  /* border-radius: 0.5rem; */
-  /* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); */
+  /* border-radius: 8px; */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   text-align: center;
   word-wrap: break-word;
@@ -297,16 +293,16 @@ section table th {
   background-color: #322e2e !important;
   color: #fff !important;
   border: 1px solid #000;
-  padding: 0.2rem 1rem;
+  padding: 10px 12px;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 22px;
 }
 
 /* ボディセル：黒枠 */
 section table td {
   border: 1px solid #000;
-  padding: 0.2rem 1rem;
+  padding: 3.2px 16px;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 20px;
   word-wrap: break-word;
 }

@@ -157,6 +157,13 @@ while True:
 
 ## テーブル
 
+<!-- 対象のページのテーブルのみ文字サイズを変えたい時 -->
+
+  <style scoped>
+    table th{ font-size: 24px; },
+    table td{ font-size: 16px; }
+  </style>
+
 | 1   | 2   |
 | --- | --- |
 |     |     |
