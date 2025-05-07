@@ -1,5 +1,5 @@
 {
-  "workbench.preferredDarkColorTheme": "Solarized Light",
+  "workbench.preferredDarkColorTheme": "Cursor Dark",
   "markdown.marp.themes": ["./jrw_theme.css"],
   "markdown.marp.html": "all",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
