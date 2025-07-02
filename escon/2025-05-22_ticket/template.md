@@ -15,9 +15,9 @@ header: |
 <!-- _class: title -->
 <!-- paginate: false -->
 
-# Main Title
+# チケット分析結果
 
-## 2025-mm-dd ｜ ご挨拶・ご紹介資料
+## 2025-05-28 ｜ ご挨拶・ご紹介資料
 
 ---
 
@@ -37,20 +37,17 @@ header: |
 
 # 1
 
-## Sub Title
+## データの確認
 
 ---
 
-# Images Center Format
+# 商品単価の分布
 
-一番良く使うフォーマット
+![c h:330](./images/price_dist.png)
 
-![c](./images/sample.png)
-c:は center の略です. 簡単に書くために jrw_theme.css で定義しています
-
-- 図 1: 注釈\*
-
-画像の下にドキュメントを書けます
+- FIELD LEVEL
+- MAIN LEVEL
+- STAR LEVEL
 
 ---
 
