@@ -208,17 +208,12 @@ $$
 ---
 
 # 各フォントの変更
-
-<font color="green">
-    色つきの文字
-</font>
-
+<font color="green">色つきの文字</font>
 <span style="font-size: 24px">大きい文字</span>
 <span style="font-size: 12px">小さい文字</span>
 <span style="text-decoration: underline">下線</span>
 <span style="background-color: yellow">黄色の背景</span>
 
-<!-- 空白行 -->
 
 <div align="left">この部分は左端から</div>
 <div align="center">この部分は中央から</div>
